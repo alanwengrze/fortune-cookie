@@ -1,0 +1,107 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+  --base-color-white:white;
+  --base-color-blue-800:#34355B;
+  --base-color-gray-300:#E4EDF1;
+  --color-button-orange:#FF9500;
+}
+
+body{
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  background: linear-gradient(15deg, #190361 0%, #B0F 100%);
+  height: 100vh;
+}
+body, button, input{
+  font-family: "DM sans", sans-serif;
+}
+.hide{
+  display: none;
+}
+main{
+  width: min(43rem, 90%);
+  padding: 5rem;
+  background:var(--base-color-white);
+  border-radius: .5rem;
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.80);
+  margin: 0 auto;
+}
+
+/* Biscoito não clicado */
+.closedBiscuit{
+  text-align: center;
+}
+h1, p{
+  margin-block: 2rem;
+}
+
+h1{
+  color: var(--base-color-blue-800);
+  text-align: center;
+  font-size: 2.4rem;
+}
+p{
+  font-size: 1.5rem;
+  color: var(--base-color-blue-800);
+  
+}
+
+
+.closedBiscuit img:hover{
+  animation: vibrating 0.1s backwards infinite;
+}
+
+@keyframes vibrating {
+  from{
+    transform: rotate(10deg);
+  }
+  to{
+    transform: rotateY(10deg);
+  }
+}
+
+/* Biscoito clicado */
+.openBiscuit h1, p, button{
+  margin-block-end: 4rem;
+}
+.openBiscuit p{
+  font-family: "Dancing Script";
+  text-align: center;
+  background:var(--base-color-gray-300);
+  font-size: 2.4rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.50);
+  animation: moveUp 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) alternate both;
+}
+.openBiscuit img{
+  margin: 3rem auto;
+  display: block;
+}
+
+.openBiscuit button{
+  display: block;
+  margin: auto;
+  padding: 1.6rem;
+  border: none;
+  border-radius: .4rem;
+  background: var(--color-button-orange);
+  color: var(--base-color-white);
+  font-weight: bold;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+@keyframes moveUp {
+  from{
+    transform: translateY(180%) rotateX(90deg) scale(0.2);
+  }
+}
